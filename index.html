@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your AI Adventure: Thriving in Tomorrow's Switzerland</title>
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom styles -->
+    <style>
+        :root {
+            --swiss-red: #DC143C;
+            --swiss-blue: #003875;
+            --swiss-gray: #6C7B7F;
+            --accent-gold: #FFD700;
+        }
+
+        .reveal {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .reveal .slides {
+            text-align: left;
+            width: 100% !important;
+            left: 50% !important;
+            top: 0 !important;
+            transform: translateX(-50%) translateY(0) !important;
+        }
+
+        .reveal .slides section {
+            box-sizing: border-box;
+            padding: 50px 10% 10px 10%;
+            width: 100%;
+            max-width: none;
+            top: 0 !important;
+            transform: none !important;
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            color: var(--swiss-red);
+            text-transform: none;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .reveal h1 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal h2 {
+            font-size: 2em;
+            border-bottom: 3px solid var(--swiss-red);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .reveal .title-slide {
+            background: linear-gradient(135deg, var(--swiss-red) 0%, var(--swiss-blue) 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .reveal .title-slide h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .swiss-flag {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--swiss-red);
+            position: relative;
+            margin: 0 15px;
+        }
+
+        .swiss-flag::before,
+        .swiss-flag::after {
+            content: '';
+            position: absolute;
+            background: white;
+        }
+
+        .swiss-flag::before {
+            width: 4px;
+            height: 24px;
+            left: 18px;
+            top: 8px;
+        }
+
+        .swiss-flag::after {
+            width: 24px;
+            height: 4px;
+            left: 8px;
+            top: 18px;
+        }
+
+        .stat-box {
+            background: linear-gradient(45deg, #f0f8ff, #e6f3ff);
+            border-left: 5px solid var(--swiss-red);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--swiss-red);
+            display: block;
+        }
+
+        .skill-card {
+            background: white;
+            border: 2px solid var(--swiss-blue);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--swiss-red);
+        }
+
+        .skill-stars {
+            color: var(--accent-gold);
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .interactive-poll {
+            background: var(--swiss-blue);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .interactive-poll h3 {
+            color: white !important;
+        }
+
+        .poll-option {
+            background: white;
+            color: var(--swiss-blue);
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 25px;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .poll-option:hover {
+            background: var(--accent-gold);
+            transform: scale(1.05);
+        }
+
+        .company-showcase {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .company-card {
+            background: linear-gradient(45deg, #DC143C, #B91C3C);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 200px;
+            margin: 10px;
+            transform: rotate(-2deg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            animation: companyFloat 3s ease-in-out infinite;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        .company-card:nth-child(even) {
+            transform: rotate(2deg);
+            background: linear-gradient(45deg, #003875, #1E3A8A);
+        }
+
+        .company-card h3 {
+            color: white !important;
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+
+        .company-card p {
+            color: white;
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .future-path {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .future-path:hover {
+            background: linear-gradient(90deg, #e3f2fd, #bbdefb);
+            transform: translateX(10px);
+        }
+
+        .path-icon {
+            font-size: 3em;
+            margin-right: 20px;
+            color: var(--swiss-red);
+        }
+
+        .mountain-bg {
+            background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 50%, #228B22 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mountain-bg::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><polygon fill="%23333" points="0,200 1000,200 800,50 600,120 400,30 200,80 0,100"/></svg>');
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--swiss-red);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: var(--swiss-red);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-in-card {
+            opacity: 0;
+            transform: translateX(-100px);
+            animation: slideInFromLeft 0.8s ease-out forwards, companyFloat 3s ease-in-out infinite;
+            animation-delay: 0s, 1.2s;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) rotate(-2deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(-2deg);
+            }
+        }
+
+        @keyframes companyFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-2deg);
+            }
+        }
+
+        .learning-section {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .learning-section.old {
+            animation-delay: 0.3s;
+        }
+
+        .learning-section.new {
+            animation-delay: 1.2s;
+        }
+
+        .transform-arrow {
+            opacity: 0;
+            transform: scale(0.5);
+            animation: arrowAppear 0.6s ease-out forwards;
+            animation-delay: 0.9s;
+            position: relative;
+        }
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes arrowAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-180deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(0deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes arrowPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .transform-arrow:hover {
+            animation: arrowPulse 0.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .hidden-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #p5-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+            display: none !important;
+        }
+
+        .controls {
+            display: flex;
+            gap: 4px;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 4px 6px;
+            margin: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8em;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .reveal h1 {
+                font-size: 1.8em;
+            }
+
+            .reveal h2 {
+                font-size: 1.5em;
+            }
+
+            .company-showcase {
+                flex-direction: column;
+            }
+
+            .future-path {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .path-icon {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-indicator" id="progress-bar"></div>
+    <div class="slide-number" id="slide-number">
+        <span>1 / 16</span>
+        <div class="controls">
+            <button class="control-btn" onclick="toggleBackground()">🎨</button>
+            <button class="control-btn" onclick="resetAnimations()">🔄</button>
+            <button class="control-btn" onclick="manualReload()">🔃</button>
+        </div>
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1: Opening -->
+            <section class="title-slide mountain-bg">
+                <div class="swiss-flag"></div>
+                <h1 style="font-size: 1.8em; margin-bottom: 0.2em;">Your AI Adventure: Thriving in Tomorrow's
+                    Switzerland</h1>
+                <div class="swiss-flag"></div>
+                <p style="font-size: 1.2em; margin: 15px 0;">A Journey for Swiss High School Students</p>
+            </section>
+
+            <!-- Slide 2: Quick Poll -->
+            <section>
+                <h2>Quick Poll: Let's Get Real!</h2>
+                <div class="interactive-poll" style="padding: 20px; margin: 20px 0;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.2em; color: var(--swiss-red);">Show of hands... 🙋‍♂️🙋‍♀️</h3>
+                    <div class="poll-option" onclick="animatePoll(this)"
+                        style="padding: 12px 20px; margin: 8px; font-size: 1em;">Who here has used ChatGPT? 🤖</div>
+                    <div class="poll-option" onclick="animatePoll(this)"
+                        style="padding: 12px 20px; margin: 8px; font-size: 1em;">Who's used it for homework? 📚</div>
+                    <div class="poll-option" onclick="animatePoll(this)"
+                        style="padding: 12px 20px; margin: 8px; font-size: 1em;">Who's created music with AI? 🎵</div>
+                    <div class="poll-option" onclick="animatePoll(this)"
+                        style="padding: 12px 20px; margin: 8px; font-size: 1em;">Who's generated images with AI? 🎨</div>
+                    <div class="poll-option" onclick="animatePoll(this)"
+                        style="padding: 12px 20px; margin: 8px; font-size: 1em;">Who's made videos with AI? 🎬</div>
+                    <div class="poll-option" onclick="animatePoll(this)"
+                        style="padding: 12px 20px; margin: 8px; font-size: 1em;">Who's worried AI might take their future job? 😰</div>
+                </div>
+                <p style="text-align: center; font-style: italic; color: var(--swiss-gray); margin-top: 20px;">
+                    "The best way to predict the future is to create it" - Abraham Lincoln (maybe) 🚀
+                </p>
+            </section>
+
+            <!-- Slide 3: About Me -->
+            <section>
+                <h2>About Your Presenter</h2>
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; align-items: start;">
+                    <div class="profile-section">
+                        <div class="swiss-flag" style="margin-bottom: 20px;"></div>
+                        <h3 style="color: var(--swiss-red); margin-bottom: 15px;">Slawek Zak</h3>
+                        <p style="font-size: 0.9em; color: var(--swiss-gray);">Technical Program Manager @ Google</p>
+                    </div>
+                    
+                    <div class="experience-grid">
+                        <div class="skill-card hidden-reveal" style="background: linear-gradient(135deg, #DC143C 0%, #FF6B6B 100%);">
+                            <h4 style="color: white;">🚀 Google AI Experience</h4>
+                            <ul style="color: white; font-size: 0.85em;">
+                                <li>10+ years driving complex tech projects</li>
+                                <li>Authored LLM workflow automation proposal</li>
+                                <li>Built Gemini-powered content generation tools</li>
+                                <li>Supporting climate AI for Google.org</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-card hidden-reveal" style="background: linear-gradient(135deg, #003875 0%, #4A90E2 100%);">
+                            <h4 style="color: white;">💡 Startup & Innovation</h4>
+                            <ul style="color: white; font-size: 0.85em;">
+                                <li>Co-founded tech startup (4 years)</li>
+                                <li>Built telco-grade billing systems</li>
+                                <li>11+ years in telecommunications</li>
+                                <li>From technical co-founder to TPM</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-card hidden-reveal" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);">
+                            <h4 style="color: #333;">🎓 Swiss Connection</h4>
+                            <ul style="color: #333; font-size: 0.85em;">
+                                <li>Zurich resident & community member</li>
+                                <li>Volunteer with Zurich high schools</li>
+                                <li>Teaching "How the Internet Works"</li>
+                                <li>Toastmasters & stand-up comedy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: The Plot Twist -->
+            <section>
+                <h2>The Plot Twist</h2>
+                <div class="stat-box hidden-reveal" style="margin: 20px 0;">
+                    <span class="stat-number">+78 Million</span>
+                    <strong>NET NEW JOBS by 2030</strong>
+                    <p>AI Creates MORE Jobs Than It Destroys!</p>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin: 20px 0; gap: 20px;">
+                    <div class="stat-box hidden-reveal" style="width: 45%; padding: 15px;">
+                        <span class="stat-number" style="color: green; font-size: 2em;">170M</span>
+                        <strong style="font-size: 0.9em;">New Jobs Created</strong>
+                    </div>
+                    <div class="stat-box hidden-reveal" style="width: 45%; padding: 15px;">
+                        <span class="stat-number" style="color: orange; font-size: 2em;">92M</span>
+                        <strong style="font-size: 0.9em;">Jobs Displaced</strong>
+                    </div>
+                </div>
+                <div class="interactive-poll" style="margin-top: 15px;">
+                    <p><strong>Swiss Context:</strong> Like creating 10 new jobs for every person in Switzerland!</p>
+                </div>
+            </section>
+
+            <!-- Slide 3: Now and Future -->
+            <section>
+                <h2>From Today's Work to Tomorrow's Possibilities</h2>
+                <div style="display: flex; justify-content: center; align-items: center; margin: 30px 0;">
+                    <img src="imgs/now-and-future.png"
+                        alt="Split image showing current work with laptop versus future AI-enhanced work with holograms"
+                        style="max-width: 80%; height: auto; border-radius: 15px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+                </div>
+            </section>
+
+            <!-- Slide 4: Swiss Innovation Hub -->
+            <section>
+                <h2>Switzerland: The Silicon Valley of Robotics</h2>
+                <div class="company-showcase" style="margin: 25px 0;">
+                    <div class="company-card slide-in-card"
+                        style="min-width: 150px; padding: 15px; animation-delay: 0.2s, 1.4s;">
+                        <h3 style="font-size: 1.8em; margin: 0 0 8px 0;">🎯 #1</h3>
+                        <p style="font-size: 0.85em; margin: 0;">AI patents per capita globally</p>
+                    </div>
+                    <div class="company-card slide-in-card"
+                        style="min-width: 150px; padding: 15px; animation-delay: 0.6s, 1.8s; transform: rotate(2deg);">
+                        <h3 style="font-size: 1.8em; margin: 0 0 8px 0;">🏆 Top 20</h3>
+                        <p style="font-size: 0.85em; margin: 0;">ETH & EPFL universities worldwide</p>
+                    </div>
+                    <div class="company-card slide-in-card"
+                        style="min-width: 150px; padding: 15px; animation-delay: 1.0s, 2.2s;">
+                        <h3 style="font-size: 1.8em; margin: 0 0 8px 0;">📊 82%</h3>
+                        <p style="font-size: 0.85em; margin: 0;">Swiss knowledge workers use AI</p>
+                    </div>
+                </div>
+                <div class="stat-box" style="margin: 25px 0; padding: 18px;">
+                    <h3 style="font-size: 1.1em; margin: 0 0 12px 0;">Facts That Hit Home:</h3>
+                    <ul style="margin: 0; padding-left: 20px; font-size: 0.9em; line-height: 1.5;">
+                        <li style="margin-bottom: 6px;">Your neighbor might work at Google, Microsoft, or a cutting-edge
+                            startup</li>
+                        <li style="margin-bottom: 6px;">Switzerland has 700+ AI startups and counting</li>
+                        <li>The Alps supercomputer gives us world-class AI infrastructure</li>
+                    </ul>
+                </div>
+                <p
+                    style="text-align: center; font-size: 1.1em; color: var(--swiss-red); font-weight: bold; margin: 20px 0 0 0;">
+                    You're not just witnessing history—you're living at its epicenter! 🚀
+                </p>
+            </section>
+
+            <!-- Slide 4: The Learning Paradox -->
+            <section>
+                <h2>The Learning Paradox</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
+                    <div class="learning-section old" style="width: 45%;">
+                        <h3 style="color: orange;">Old Learning:</h3>
+                        <div class="skill-card">
+                            <p>📚 Memorize facts</p>
+                            <p>📝 Take test</p>
+                            <p>🗑️ Forget</p>
+                        </div>
+                    </div>
+                    <div class="transform-arrow"
+                        style="width: 10%; text-align: center; height: 60px; min-height: 60px;">
+                        <i class="fas fa-arrow-right" style="font-size: 2.5em; color: var(--swiss-red); text-shadow: 0 2px 4px rgba(0,0,0,0.3);"></i>
+                    </div>
+                    <div class="learning-section new" style="width: 45%;">
+                        <h3 style="color: green;">New Learning:</h3>
+                        <div class="skill-card">
+                            <p>🤔 Understand concepts</p>
+                            <p>🎨 Apply creatively</p>
+                            <p>🔄 Adapt continuously</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="interactive-poll">
+                    <h3>The Paradox:</h3>
+                    <p>"In an age where AI knows everything, knowing how to think becomes everything"</p>
+                    <div class="poll-option">Interactive Moment: Turn to your neighbor and discuss!</div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Job Evolution -->
+            <section>
+                <h2>Evolution, Not Extinction</h2>
+                <div class="future-path" style="margin: 15px 0; padding: 15px;">
+                    <div class="path-icon">🏦</div>
+                    <div>
+                        <h3 style="font-size: 1.1em; margin: 0 0 5px 0;">Bank Teller → Digital Banking Specialist</h3>
+                        <p style="font-size: 0.9em; margin: 0;">From cash counting to customer relationship expert</p>
+                    </div>
+                </div>
+                <div class="future-path" style="margin: 15px 0; padding: 15px;">
+                    <div class="path-icon">📊</div>
+                    <div>
+                        <h3 style="font-size: 1.1em; margin: 0 0 5px 0;">Data Entry → Data Storyteller</h3>
+                        <p style="font-size: 0.9em; margin: 0;">From typing numbers to revealing insights</p>
+                    </div>
+                </div>
+                <div class="future-path" style="margin: 15px 0; padding: 15px;">
+                    <div class="path-icon">🛒</div>
+                    <div>
+                        <h3 style="font-size: 1.1em; margin: 0 0 5px 0;">Cashier → Customer Experience Designer</h3>
+                        <p style="font-size: 0.9em; margin: 0;">From scanning barcodes to crafting experiences</p>
+                    </div>
+                </div>
+                <div class="future-path" style="margin: 15px 0; padding: 15px;">
+                    <div class="path-icon">🤖</div>
+                    <div>
+                        <h3 style="font-size: 1.1em; margin: 0 0 5px 0;">Factory Worker → Robot Collaboration Expert
+                        </h3>
+                        <p style="font-size: 0.9em; margin: 0;">From assembly line to human-robot team leader</p>
+                    </div>
+                </div>
+                <p
+                    style="text-align: center; font-style: italic; color: var(--swiss-blue); font-size: 1em; margin: 15px 0 0 0;">
+                    "Every 'dying' job is really a chrysalis for something new" 🦋
+                </p>
+            </section>
+
+            <!-- Slide 6: Swiss Success Stories -->
+            <section>
+                <h2>Swiss Heroes of the AI Age</h2>
+                <div class="company-showcase" style="margin: 15px 0;">
+                    <div class="company-card" style="padding: 12px; min-width: 140px;">
+                        <h3 style="font-size: 1.4em; margin: 0 0 6px 0;">💊 Novartis + AI</h3>
+                        <p style="font-size: 0.8em; margin: 0 0 4px 0;">Discovering life-saving drugs in weeks, not
+                            years</p>
+                        <small style="font-size: 0.7em;">AI does analysis, humans make breakthroughs</small>
+                    </div>
+                    <div class="company-card" style="padding: 12px; min-width: 140px;">
+                        <h3 style="font-size: 1.4em; margin: 0 0 6px 0;">🏛️ UBS + AI</h3>
+                        <p style="font-size: 0.8em; margin: 0 0 4px 0;">Analyzing deals in seconds</p>
+                        <small style="font-size: 0.7em;">Bankers focus on relationships</small>
+                    </div>
+                </div>
+                <div class="company-showcase" style="margin: 15px 0;">
+                    <div class="company-card" style="padding: 12px; min-width: 140px;">
+                        <h3 style="font-size: 1.4em; margin: 0 0 6px 0;">⌚ Swiss Watches + AI</h3>
+                        <p style="font-size: 0.8em; margin: 0 0 4px 0;">AI detects flaws, humans create beauty</p>
+                        <small style="font-size: 0.7em;">Precision meets artistry</small>
+                    </div>
+                    <div class="company-card" style="padding: 12px; min-width: 140px;">
+                        <h3 style="font-size: 1.4em; margin: 0 0 6px 0;">🦾 ABB Robots</h3>
+                        <p style="font-size: 0.8em; margin: 0 0 4px 0;">Working alongside humans</p>
+                        <small style="font-size: 0.7em;">Not replacing them</small>
+                    </div>
+                </div>
+                <div class="stat-box" style="margin: 15px 0; padding: 12px;">
+                    <h3 style="color: var(--swiss-red); font-size: 1em; margin: 0 0 6px 0;">Key Insight:</h3>
+                    <p style="font-size: 1em; margin: 0;">Notice the pattern? AI does the boring stuff. Humans do the
+                        brilliant stuff. ✨</p>
+                </div>
+            </section>
+
+            <!-- Slide 7: Human Superpowers -->
+            <section>
+                <h2>What Makes You Priceless in an AI World?</h2>
+                <div style="display: flex; justify-content: space-between; margin: 20px 0;">
+                    <div style="width: 48%;">
+                        <h3 style="color: orange; font-size: 1.1em; margin: 0 0 10px 0;">AI's Strengths:</h3>
+                        <div class="skill-card" style="padding: 15px;">
+                            <p style="margin: 5px 0; font-size: 0.85em;">🧠 <strong>Perfect Memory:</strong> Instantly recalls every detail from millions of documents</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">⚡ <strong>Lightning Speed:</strong> Processes complex calculations in milliseconds</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">🔍 <strong>Pattern Master:</strong> Spots trends in massive datasets humans would miss</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">🔋 <strong>24/7 Availability:</strong> Works continuously without breaks or vacation</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">🌐 <strong>Multi-tasking:</strong> Handles thousands of tasks simultaneously</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">📊 <strong>Data Processing:</strong> Analyzes petabytes of information instantly</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">🎯 <strong>Precision:</strong> Follows instructions exactly without human error</p>
+                        </div>
+                    </div>
+                    <div style="width: 48%;">
+                        <h3 style="color: green; font-size: 1.1em; margin: 0 0 10px 0;">Your Superpowers:</h3>
+                        <div class="skill-card" style="padding: 15px;">
+                            <p style="margin: 5px 0; font-size: 0.85em;">🎨 <strong>True Creativity:</strong> Imagine completely new concepts that never existed before</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">❤️ <strong>Genuine Empathy:</strong> Feel real emotions and understand human suffering deeply</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">👑 <strong>Wise Leadership:</strong> Inspire others and make tough calls in uncertain situations</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">⚖️ <strong>Moral Judgment:</strong> Navigate complex ethical dilemmas with conscience</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">🤝 <strong>Human Connection:</strong> Build trust, relationships, and meaningful bonds</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">🎭 <strong>Cultural Intelligence:</strong> Understand context, humor, and social nuances</p>
+                            <p style="margin: 5px 0; font-size: 0.85em;">💡 <strong>Intuitive Leaps:</strong> Make breakthrough discoveries with "gut feelings"</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Skill Stack -->
+            <section>
+                <h2>Your Character Build for 2030</h2>
+                <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 15px 0;">
+                    <div class="skill-card" style="padding: 8px;">
+                        <h3 style="font-size: 0.9em; margin: 0 0 4px 0;">🎯 Critical Thinking</h3>
+                        <div class="skill-stars" style="font-size: 0.8em; margin: 2px 0;">★★★★★</div>
+                        <p style="font-size: 0.7em; margin: 0;">Question everything, even AI answers</p>
+                    </div>
+                    <div class="skill-card" style="padding: 8px;">
+                        <h3 style="font-size: 0.9em; margin: 0 0 4px 0;">🎨 Creativity</h3>
+                        <div class="skill-stars" style="font-size: 0.8em; margin: 2px 0;">★★★★★</div>
+                        <p style="font-size: 0.7em; margin: 0;">Connect dots others don't see</p>
+                    </div>
+                    <div class="skill-card" style="padding: 8px;">
+                        <h3 style="font-size: 0.9em; margin: 0 0 4px 0;">🤝 Emotional Intelligence</h3>
+                        <div class="skill-stars" style="font-size: 0.8em; margin: 2px 0;">★★★★☆</div>
+                        <p style="font-size: 0.7em; margin: 0;">Read the room, lead the team</p>
+                    </div>
+                    <div class="skill-card" style="padding: 8px;">
+                        <h3 style="font-size: 0.9em; margin: 0 0 4px 0;">💻 Tech Fluency</h3>
+                        <div class="skill-stars" style="font-size: 0.8em; margin: 2px 0;">★★★★☆</div>
+                        <p style="font-size: 0.7em; margin: 0;">Speak AI like a second language</p>
+                    </div>
+                    <div class="skill-card" style="padding: 8px;">
+                        <h3 style="font-size: 0.9em; margin: 0 0 4px 0;">🔄 Adaptability</h3>
+                        <div class="skill-stars" style="font-size: 0.8em; margin: 2px 0;">★★★★★</div>
+                        <p style="font-size: 0.7em; margin: 0;">Your ultimate cheat code</p>
+                    </div>
+                    <div class="skill-card" style="padding: 8px;">
+                        <h3 style="font-size: 0.9em; margin: 0 0 4px 0;">🌍 Cross-Cultural Communication</h3>
+                        <div class="skill-stars" style="font-size: 0.8em; margin: 2px 0;">★★★☆☆</div>
+                        <p style="font-size: 0.7em; margin: 0;">Bonus skill for global impact</p>
+                    </div>
+                </div>
+                <div class="interactive-poll" style="margin: 12px 0; padding: 12px;">
+                    <h3 style="font-size: 1em; margin: 0 0 6px 0;">Challenge:</h3>
+                    <p style="font-size: 0.9em; margin: 0;">What's your current build? What needs leveling up?</p>
+                </div>
+            </section>
+
+            <!-- Slide 9: Career Paths -->
+            <section>
+                <h2>Choose Your Own Adventure</h2>
+                <div class="future-path" style="margin: 10px 0; padding: 12px;">
+                    <div class="path-icon" style="font-size: 2.5em;">🔬</div>
+                    <div>
+                        <h3 style="font-size: 1em; margin: 0 0 4px 0;">Love Science? → AI-Assisted Researcher → Cure
+                            Diseases</h3>
+                        <p style="font-size: 0.85em; margin: 0;">Use AI to analyze genomic data while you design
+                            breakthrough experiments</p>
+                    </div>
+                </div>
+                <div class="future-path" style="margin: 10px 0; padding: 12px;">
+                    <div class="path-icon" style="font-size: 2.5em;">🎨</div>
+                    <div>
+                        <h3 style="font-size: 1em; margin: 0 0 4px 0;">Creative Soul? → Digital Artist → Create
+                            Impossible Worlds</h3>
+                        <p style="font-size: 0.85em; margin: 0;">Partner with AI to bring your wildest visions to life
+                        </p>
+                    </div>
+                </div>
+                <div class="future-path" style="margin: 10px 0; padding: 12px;">
+                    <div class="path-icon" style="font-size: 2.5em;">🧠</div>
+                    <div>
+                        <h3 style="font-size: 1em; margin: 0 0 4px 0;">People Person? → AI-Enhanced Therapist → Heal
+                            Minds</h3>
+                        <p style="font-size: 0.85em; margin: 0;">Use AI insights while providing human compassion</p>
+                    </div>
+                </div>
+                <div class="future-path" style="margin: 10px 0; padding: 12px;">
+                    <div class="path-icon" style="font-size: 2.5em;">🌱</div>
+                    <div>
+                        <h3 style="font-size: 1em; margin: 0 0 4px 0;">Problem Solver? → Sustainability Engineer → Save
+                            the Planet</h3>
+                        <p style="font-size: 0.85em; margin: 0;">Combine AI analysis with environmental expertise</p>
+                    </div>
+                </div>
+                <div class="future-path" style="margin: 10px 0; padding: 12px;">
+                    <div class="path-icon" style="font-size: 2.5em;">🚀</div>
+                    <div>
+                        <h3 style="font-size: 1em; margin: 0 0 4px 0;">Entrepreneur? → Start-up Founder → Build the
+                            Future</h3>
+                        <p style="font-size: 0.85em; margin: 0;">Launch the next Swiss unicorn with AI as your
+                            co-founder</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Swiss Advantages -->
+            <section>
+                <h2>Your Swiss Starter Pack</h2>
+                <div class="stat-box" style="margin: 15px 0; padding: 15px;">
+                    <h3 style="font-size: 1.1em; margin: 0 0 8px 0;">🇨🇭 Unique Advantages:</h3>
+                    <ul style="font-size: 0.9em; line-height: 1.3; margin: 0; padding-left: 20px;">
+                        <li style="margin-bottom: 4px;"><strong>🎓 World-Class Education:</strong> ETH/EPFL/UZH at your
+                            doorstep</li>
+                        <li style="margin-bottom: 4px;"><strong>⚒️ Apprenticeship System:</strong> Learn while earning
+                        </li>
+                        <li style="margin-bottom: 4px;"><strong>🗣️ Multilingual Edge:</strong> Speak to the world</li>
+                        <li style="margin-bottom: 4px;"><strong>🚀 Innovation Ecosystem:</strong> 700+ AI startups
+                            hiring</li>
+                        <li><strong>⚙️ Quality Mindset:</strong> Swiss precision meets AI power</li>
+                    </ul>
+                </div>
+                <div class="company-card" style="margin: 15px auto; max-width: 600px; padding: 15px;">
+                    <h3 style="font-size: 1.1em; margin: 0 0 8px 0;">💰 Economic Reality Check</h3>
+                    <p style="font-size: 0.95em; margin: 0;">Swiss AI professionals earn <strong>56% more</strong> than
+                        traditional roles</p>
+                </div>
+                <div class="interactive-poll" style="margin: 15px 0; padding: 12px;">
+                    <h3 style="font-size: 1em; margin: 0;">Which tool will you sharpen first? 🛠️</h3>
+                </div>
+            </section>
+
+            <!-- Slide 11: Addressing Fears -->
+            <section>
+                <h2>Yes, It's Scary. Here's Why It's Also Exciting</h2>
+                <div
+                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: auto auto; gap: 15px 12px; margin: 20px 0;">
+                    <!-- Questions Row -->
+                    <div class="skill-card" style="padding: 20px; grid-row: 1;">
+                        <h3 style="color: orange; font-size: 1.1em; margin: 0; text-align: center;">😰 "Will there be
+                            jobs for me?"</h3>
+                    </div>
+                    <div class="skill-card" style="padding: 20px; grid-row: 1;">
+                        <h3 style="color: orange; font-size: 1.1em; margin: 0; text-align: center;">😓 "Will I keep up?"
+                        </h3>
+                    </div>
+                    <div class="skill-card" style="padding: 20px; grid-row: 1;">
+                        <h3 style="color: orange; font-size: 1.1em; margin: 0; text-align: center;">🤓 "Will only
+                            techies succeed?"</h3>
+                    </div>
+                    <div class="skill-card" style="padding: 20px; grid-row: 1;">
+                        <h3 style="color: orange; font-size: 1.1em; margin: 0; text-align: center;">📊 "Will inequality
+                            grow?"</h3>
+                    </div>
+
+                    <!-- Answers Row -->
+                    <div class="skill-card"
+                        style="padding: 20px; grid-row: 2; background: #f0fff0; border: 2px solid #28a745;">
+                        <p style="color: green; font-weight: bold; font-size: 1.1em; margin: 0; text-align: center;">✅
+                            Yes, 78 million new ones</p>
+                    </div>
+                    <div class="skill-card"
+                        style="padding: 20px; grid-row: 2; background: #f0fff0; border: 2px solid #28a745;">
+                        <p style="color: green; font-weight: bold; font-size: 1.1em; margin: 0; text-align: center;">✅
+                            Yes, with lifelong learning</p>
+                    </div>
+                    <div class="skill-card"
+                        style="padding: 20px; grid-row: 2; background: #f0fff0; border: 2px solid #28a745;">
+                        <p style="color: green; font-weight: bold; font-size: 1.1em; margin: 0; text-align: center;">✅
+                            No, human skills are premium</p>
+                    </div>
+                    <div class="skill-card"
+                        style="padding: 20px; grid-row: 2; background: #f0fff0; border: 2px solid #28a745;">
+                        <p style="color: green; font-weight: bold; font-size: 1.1em; margin: 0; text-align: center;">✅
+                            Only if we let it</p>
+                    </div>
+                </div>
+                <div class="stat-box" style="margin: 15px 0; padding: 12px;">
+                    <h3 style="font-size: 1.1em; margin: 0 0 8px 0;">The Truth:</h3>
+                    <p style="font-size: 1em; margin: 0 0 8px 0;">"Every generation faces 'the end of work.' Every
+                        generation creates new possibilities."</p>
+                    <p style="font-style: italic; font-size: 0.9em; margin: 0;">Your parents worried about the internet.
+                        You grew up native to it. Same story, new chapter. 📖</p>
+                </div>
+            </section>
+
+            <!-- Slide 12: Mission -->
+            <section>
+                <h2>Operation: Future-Proof Yourself</h2>
+                <div class="interactive-poll" style="margin: 20px 0; padding: 15px;">
+                    <h3 style="font-size: 1.1em; margin: 0;">🎯 Your Missions:</h3>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 25px 0;">
+                    <div class="skill-card" style="padding: 18px;">
+                        <h3 style="font-size: 1.1em; margin: 0 0 10px 0;">📅 This Week</h3>
+                        <p style="font-size: 0.9em; margin: 0;">Use AI for learning, not just answers</p>
+                    </div>
+                    <div class="skill-card" style="padding: 18px;">
+                        <h3 style="font-size: 1.1em; margin: 0 0 10px 0;">📆 This Month</h3>
+                        <p style="font-size: 0.9em; margin: 0;">Start a creative project AI can't do alone</p>
+                    </div>
+                    <div class="skill-card" style="padding: 18px;">
+                        <h3 style="font-size: 1.1em; margin: 0 0 10px 0;">🗓️ This Term</h3>
+                        <p style="font-size: 0.9em; margin: 0;">Join a club that builds human skills</p>
+                    </div>
+                    <div class="skill-card" style="padding: 18px;">
+                        <h3 style="font-size: 1.1em; margin: 0 0 10px 0;">📊 This Year</h3>
+                        <p style="font-size: 0.9em; margin: 0;">Learn one technical + one human skill</p>
+                    </div>
+                </div>
+                <div class="stat-box" style="margin: 20px 0; padding: 15px;">
+                    <h3 style="font-size: 1.1em; margin: 0 0 10px 0;">🗝️ Secret Weapon:</h3>
+                    <p style="font-size: 1.1em; text-align: center; margin: 0;">"The ability to learn faster than things
+                        change"</p>
+                </div>
+                <div class="interactive-poll" style="margin: 20px 0; padding: 15px;">
+                    <p style="font-size: 1.1em; margin: 0;">The future isn't something that happens to you. It's
+                        something you create. 🚀</p>
+                </div>
+            </section>
+
+            <!-- Slide 13: Inspiration Gallery -->
+            <section>
+                <h2>Swiss Under-30s Already Building Tomorrow</h2>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 15px 0;">
+                    <div class="company-card" style="padding: 15px;">
+                        <h3 style="font-size: 1em; margin: 0 0 6px 0;">🎓 ETH Student</h3>
+                        <p style="font-size: 0.85em; margin: 0 0 4px 0;">Created AI for dyslexia support</p>
+                        <small style="font-size: 0.7em;">"Started in a dorm room"</small>
+                    </div>
+                    <div class="company-card" style="padding: 15px;">
+                        <h3 style="font-size: 1em; margin: 0 0 6px 0;">🌱 EPFL Graduate</h3>
+                        <p style="font-size: 0.85em; margin: 0 0 4px 0;">Revolutionizing sustainable farming</p>
+                        <small style="font-size: 0.7em;">"Failed my first startup, kept learning"</small>
+                    </div>
+                    <div class="company-card" style="padding: 15px;">
+                        <h3 style="font-size: 1em; margin: 0 0 6px 0;">⚒️ Former Apprentice</h3>
+                        <p style="font-size: 0.85em; margin: 0 0 4px 0;">Now robotics entrepreneur</p>
+                        <small style="font-size: 0.7em;">"Hands-on experience was my edge"</small>
+                    </div>
+                    <div class="company-card" style="padding: 15px;">
+                        <h3 style="font-size: 1em; margin: 0 0 6px 0;">🎨 Digital Artist</h3>
+                        <p style="font-size: 0.85em; margin: 0 0 4px 0;">Using AI to create impossible sculptures</p>
+                        <small style="font-size: 0.7em;">"Art school + coding bootcamp"</small>
+                    </div>
+                </div>
+                <div class="stat-box" style="margin: 15px 0; padding: 12px;">
+                    <h3 style="font-size: 1em; margin: 0 0 6px 0;">Their Message:</h3>
+                    <p style="font-size: 1.1em; text-align: center; margin: 0;">"We started where you are now" 🌟</p>
+                </div>
+                <div class="interactive-poll" style="margin: 12px 0; padding: 10px;">
+                    <h3 style="font-size: 1em; margin: 0;">What problem do you want to solve? 🤔</h3>
+                </div>
+            </section>
+
+            <!-- Slide 14: Action Items -->
+            <section>
+                <h2>Your Learning Journey Starts Now</h2>
+                <div class="stat-box" style="margin: 15px 0; padding: 12px;">
+                    <h3 style="font-size: 1em; margin: 0 0 8px 0;">✅ Immediate Actions:</h3>
+                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 12px;">
+                        <div class="skill-card" style="padding: 10px;">
+                            <p style="font-size: 0.8em; margin: 0;">□ Try one new AI tool this week (responsibly!)</p>
+                        </div>
+                        <div class="skill-card" style="padding: 10px;">
+                            <p style="font-size: 0.8em; margin: 0;">□ Interview someone in a job you're curious about
+                            </p>
+                        </div>
+                        <div class="skill-card" style="padding: 10px;">
+                            <p style="font-size: 0.8em; margin: 0;">□ Start a "Future Skills" journal</p>
+                        </div>
+                        <div class="skill-card" style="padding: 10px;">
+                            <p style="font-size: 0.8em; margin: 0;">□ Find your learning style (visual? hands-on?
+                                collaborative?)</p>
+                        </div>
+                        <div class="skill-card" style="padding: 10px;">
+                            <p style="font-size: 0.8em; margin: 0;">□ Join one activity that scares you a little</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin: 15px 0;">
+                    <h3 style="font-size: 1em; margin: 0 0 8px 0; text-align: center;">📚 Resources</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                        <div class="skill-card" style="padding: 10px;">
+                            <p style="font-size: 0.8em; margin: 0; text-align: center;">Swiss AI Initiative programs</p>
+                        </div>
+                        <div class="skill-card" style="padding: 10px;">
+                            <p style="font-size: 0.8em; margin: 0; text-align: center;">Free ETH/EPFL courses</p>
+                        </div>
+                        <div class="skill-card" style="padding: 10px;">
+                            <p style="font-size: 0.8em; margin: 0; text-align: center;">Local maker spaces</p>
+                        </div>
+                        <div class="skill-card" style="padding: 10px;">
+                            <p style="font-size: 0.8em; margin: 0; text-align: center;">Tech meetups & clubs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="interactive-poll" style="margin: 12px 0; padding: 10px;">
+                    <h3 style="font-size: 0.95em; margin: 0;">Challenge: Check off three by next month. Share your
+                        progress! 📈</h3>
+                </div>
+            </section>
+
+            <!-- Slide 15: Grand Finale -->
+            <section
+                style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('imgs/future.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">The Future of Switzerland is in This
+                    Room</h2>
+                <div class="stat-box" style="background: rgba(255,255,255,0.95); margin: 20px 0; padding: 15px;">
+                    <h3 style="font-size: 0.9em; margin: 0 0 10px 0;">Final Thoughts:</h3>
+                    <ul style="font-size: 0.8em; line-height: 1.5; margin: 0; padding-left: 20px;">
+                        <li style="margin-bottom: 8px;">"AI will change everything except what makes us human"</li>
+                        <li style="margin-bottom: 8px;">"You're not preparing for the future—you're creating it"</li>
+                        <li>"Switzerland led the world through precision. You'll lead it through innovation + humanity"
+                        </li>
+                    </ul>
+                </div>
+                <div class="company-card" style="margin: 20px auto; max-width: 600px; padding: 15px;">
+                    <h3 style="font-size: 1em; margin: 0 0 10px 0;">🔮 The Promise:</h3>
+                    <p style="font-size: 0.95em; margin: 0;">"In 2035, you won't fear AI. You'll be teaching it."</p>
+                </div>
+                <div class="interactive-poll" style="margin: 20px 0; padding: 15px;">
+                    <h3 style="color: white; font-size: 0.9em; margin: 0 0 10px 0;">Stand up. Look around. These are
+                        your future collaborators, innovators, and world-changers.</h3>
+                    <p style="font-size: 0.9em; color: white; margin: 0;">Give yourselves a round of applause! 👏</p>
+                </div>
+            </section>
+
+            <!-- Bonus Q&A Slide -->
+            <section>
+                <h2>Questions & Discussion</h2>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 15px 0;">
+                    <div class="skill-card" style="padding: 12px;">
+                        <h3 style="font-size: 0.95em; margin: 0 0 6px 0;">❓ "What if I'm not good at tech?"</h3>
+                        <p style="font-size: 0.8em; margin: 0;">Many AI roles need creativity, communication, and domain
+                            expertise more than math!</p>
+                    </div>
+                    <div class="skill-card" style="padding: 12px;">
+                        <h3 style="font-size: 0.95em; margin: 0 0 6px 0;">🎓 "Should I still go to university?"</h3>
+                        <p style="font-size: 0.8em; margin: 0;">Both university and apprenticeship paths lead to AI
+                            careers—Switzerland's dual system is an advantage!</p>
+                    </div>
+                    <div class="skill-card" style="padding: 12px;">
+                        <h3 style="font-size: 0.95em; margin: 0 0 6px 0;">🌍 "What about climate change and AI?"</h3>
+                        <p style="font-size: 0.8em; margin: 0;">AI is accelerating green technology solutions—it's part
+                            of the solution!</p>
+                    </div>
+                    <div class="skill-card" style="padding: 12px;">
+                        <h3 style="font-size: 0.95em; margin: 0 0 6px 0;">🇨🇭 "Will Switzerland stay competitive?"</h3>
+                        <p style="font-size: 0.8em; margin: 0;">We're already leading in AI research and innovation—the
+                            question is how we'll continue to lead!</p>
+                    </div>
+                </div>
+                <div class="interactive-poll" style="margin: 12px 0; padding: 10px;">
+                    <h3 style="font-size: 1em; margin: 0 0 6px 0;">Remember:</h3>
+                    <p style="font-size: 1em; margin: 0 0 6px 0;">"Every expert was once a beginner. Every innovator was
+                        once a student. Every future leader is sitting in this room."</p>
+                    <p style="font-weight: bold; font-size: 0.9em; margin: 0;">The question isn't whether you'll
+                        succeed—it's how amazingly you'll do it! 🌟</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+
+    <script>
+        // Initialize Reveal.js
+        Reveal.initialize({
+            hash: true,
+            transition: 'convex',
+            transitionSpeed: 'slow',
+            backgroundTransition: 'zoom',
+            controls: true,
+            progress: true,
+            keyboard: true,
+            touch: true,
+            loop: false,
+            rtl: false,
+            shuffle: false,
+            fragments: true,
+            embedded: false,
+            help: true,
+            showNotes: false,
+            autoSlide: 0,
+            autoSlideStoppable: true,
+            mouseWheel: false,
+            hideAddressBar: true,
+            previewLinks: false,
+            focusBodyOnPageVisibilityChange: true,
+            theme: 'white',
+            width: 1024,
+            height: 768,
+            margin: 0.1,
+            minScale: 0.2,
+            maxScale: 1.5
+        });
+
+        // Progress indicator and slide numbers
+        Reveal.addEventListener('slidechanged', function (event) {
+            const currentSlide = event.indexh + 1;
+            const totalSlides = Reveal.getTotalSlides();
+            const progress = currentSlide / totalSlides * 100;
+
+            document.getElementById('progress-bar').style.width = progress + '%';
+            document.getElementById('slide-number').querySelector('span').textContent = `${currentSlide} / ${totalSlides}`;
+        });
+
+        // Reveal animations on slide change
+        Reveal.addEventListener('slidechanged', function (event) {
+            // Reset all elements
+            document.querySelectorAll('.hidden-reveal').forEach(el => {
+                el.classList.remove('revealed');
+            });
+
+            // Reveal elements on current slide
+            setTimeout(() => {
+                event.currentSlide.querySelectorAll('.hidden-reveal').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('revealed');
+                    }, index * 200);
+                });
+            }, 300);
+        });
+
+        // Interactive poll animation
+        function animatePoll(element) {
+            element.style.transform = 'scale(1.2)';
+            element.style.background = '#FFD700';
+            element.innerHTML += ' ✋';
+
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        // Manual reload functionality
+        function manualReload() {
+            window.location.reload();
+        }
+
+        // Control functions
+        let backgroundEnabled = true;
+        function toggleBackground() {
+            backgroundEnabled = !backgroundEnabled;
+            document.getElementById('p5-canvas').style.display = backgroundEnabled ? 'block' : 'none';
+        }
+
+        function resetAnimations() {
+            document.querySelectorAll('.hidden-reveal').forEach(el => {
+                el.classList.remove('revealed');
+            });
+
+            setTimeout(() => {
+                document.querySelectorAll('.hidden-reveal').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('revealed');
+                    }, index * 100);
+                });
+            }, 100);
+        }
+
+        // Initialize first slide animations and slide numbers
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize slide number
+            const totalSlides = document.querySelectorAll('.reveal .slides section').length;
+            document.getElementById('slide-number').querySelector('span').textContent = `1 / ${totalSlides}`;
+
+            setTimeout(() => {
+                document.querySelectorAll('.hidden-reveal').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('revealed');
+                    }, index * 200);
+                });
+            }, 1000);
+        });
+    </script>
+
+    <!-- P5.js Animation -->
+    <script>
+        let particles = [];
+        let swissColors = ['#DC143C', '#003875', '#FFD700', '#ffffff'];
+
+        function setup() {
+            let canvas = createCanvas(windowWidth, windowHeight);
+            canvas.id('p5-canvas');
+            canvas.parent(document.body);
+
+            // Initialize particles
+            for (let i = 0; i < 50; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function draw() {
+            clear(); // Transparent background
+
+            // Update and display particles
+            for (let particle of particles) {
+                particle.update();
+                particle.display();
+            }
+
+            // Add subtle Swiss cross pattern
+            drawSwissCrosses();
+        }
+
+        class Particle {
+            constructor() {
+                this.x = random(width);
+                this.y = random(height);
+                this.vx = random(-1, 1);
+                this.vy = random(-1, 1);
+                this.size = random(2, 8);
+                this.color = random(swissColors);
+                this.alpha = random(50, 150);
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Wrap around edges
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+
+                // Gentle floating motion
+                this.x += sin(frameCount * 0.01 + this.x * 0.01) * 0.5;
+                this.y += cos(frameCount * 0.01 + this.y * 0.01) * 0.5;
+            }
+
+            display() {
+                fill(red(this.color), green(this.color), blue(this.color), this.alpha);
+                noStroke();
+                ellipse(this.x, this.y, this.size);
+            }
+        }
+
+        function drawSwissCrosses() {
+            stroke(220, 20, 60, 30);
+            strokeWeight(1);
+
+            for (let x = 100; x < width; x += 200) {
+                for (let y = 100; y < height; y += 200) {
+                    // Small Swiss crosses
+                    let size = 20;
+                    line(x - size / 2, y, x + size / 2, y);
+                    line(x, y - size / 2, x, y + size / 2);
+                }
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+
+        // Add interactive mouse effects
+        function mousePressed() {
+            for (let i = 0; i < 5; i++) {
+                let p = new Particle();
+                p.x = mouseX;
+                p.y = mouseY;
+                p.vx = random(-3, 3);
+                p.vy = random(-3, 3);
+                particles.push(p);
+            }
+
+            // Remove excess particles
+            if (particles.length > 100) {
+                particles.splice(0, particles.length - 100);
+            }
+        }
+    </script>
+</body>
+
+</html>

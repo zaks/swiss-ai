@@ -1,0 +1,30 @@
+{
+  "name": "swiss-ai-presentation",
+  "version": "1.0.0",
+  "description": "Interactive Swiss AI presentation with reveal.js and p5.js animations",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server --port=3000 --open=index.html",
+    "dev": "npx live-server --port=3000 --open=index.html --watch=.",
+    "serve": "python3 -m http.server 8000",
+    "build": "echo 'No build step required - static HTML'",
+    "deploy": "echo 'Ready for deployment'"
+  },
+  "keywords": [
+    "presentation",
+    "reveal.js",
+    "p5.js",
+    "swiss",
+    "ai",
+    "education",
+    "interactive"
+  ],
+  "author": "AI Assistant",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
