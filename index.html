@@ -148,6 +148,11 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
             border-color: var(--swiss-red);
         }
+        
+        .profile-section a:hover {
+            color: var(--swiss-red) !important;
+            text-decoration: underline !important;
+        }
 
         .skill-stars {
             color: var(--accent-gold);
@@ -536,41 +541,43 @@
             <!-- Slide 3: About Me -->
             <section>
                 <h2>About Your Presenter</h2>
-                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; align-items: start;">
-                    <div class="profile-section">
-                        <div class="swiss-flag" style="margin-bottom: 20px;"></div>
-                        <h3 style="color: var(--swiss-red); margin-bottom: 15px;">Slawek Zak</h3>
-                        <p style="font-size: 0.9em; color: var(--swiss-gray);">Technical Program Manager @ Google</p>
+                <div style="display: grid; grid-template-columns: 250px 1fr; gap: 20px; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <div class="polish-flag" style="margin: 0 auto 10px; width: 50px; height: 30px; background: linear-gradient(to bottom, white 0%, white 50%, #DC143C 50%, #DC143C 100%); border: 1px solid #ddd;"></div>
+                        <h3 style="color: var(--swiss-red); margin: 0 0 5px 0; font-size: 1.2em;">Slawek Zak</h3>
+                        <p style="font-size: 0.75em; color: var(--swiss-gray); margin: 0 0 8px 0;">Technical Program Manager @ Google</p>
+                        <p style="font-size: 0.7em; margin: 0 0 3px 0;"><a href="mailto:zaks@google.com" style="color: var(--swiss-blue); text-decoration: none;">zaks@google.com</a></p>
+                        <p style="font-size: 0.7em; margin: 0;"><a href="https://www.linkedin.com/in/slawekzak/" target="_blank" style="color: var(--swiss-blue); text-decoration: none;"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
                     </div>
                     
-                    <div class="experience-grid">
-                        <div class="skill-card hidden-reveal" style="background: linear-gradient(135deg, #DC143C 0%, #FF6B6B 100%);">
-                            <h4 style="color: white;">🚀 Google AI Experience</h4>
-                            <ul style="color: white; font-size: 0.85em;">
-                                <li>10+ years driving complex tech projects</li>
-                                <li>Authored LLM workflow automation proposal</li>
-                                <li>Built Gemini-powered content generation tools</li>
-                                <li>Supporting climate AI for Google.org</li>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                        <div class="skill-card hidden-reveal" style="background: #DC143C; padding: 12px; border-radius: 8px;">
+                            <h4 style="color: white; font-size: 0.85em; margin: 0 0 6px 0;">🚀 Google AI</h4>
+                            <ul style="color: white; font-size: 0.65em; line-height: 1.4; margin: 0; padding-left: 15px;">
+                                <li>10+ years tech projects</li>
+                                <li>LLM automation proposal</li>
+                                <li>Gemini content tools</li>
+                                <li>Climate AI @ Google.org</li>
                             </ul>
                         </div>
                         
-                        <div class="skill-card hidden-reveal" style="background: linear-gradient(135deg, #003875 0%, #4A90E2 100%);">
-                            <h4 style="color: white;">💡 Startup & Innovation</h4>
-                            <ul style="color: white; font-size: 0.85em;">
-                                <li>Co-founded tech startup (4 years)</li>
-                                <li>Built telco-grade billing systems</li>
-                                <li>11+ years in telecommunications</li>
-                                <li>From technical co-founder to TPM</li>
+                        <div class="skill-card hidden-reveal" style="background: #003875; padding: 12px; border-radius: 8px;">
+                            <h4 style="color: white; font-size: 0.85em; margin: 0 0 6px 0;">💡 Startup</h4>
+                            <ul style="color: white; font-size: 0.65em; line-height: 1.4; margin: 0; padding-left: 15px;">
+                                <li>Co-founded tech startup</li>
+                                <li>Telco billing systems</li>
+                                <li>11+ years telecom</li>
+                                <li>Technical co-founder → TPM</li>
                             </ul>
                         </div>
                         
-                        <div class="skill-card hidden-reveal" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);">
-                            <h4 style="color: #333;">🎓 Swiss Connection</h4>
-                            <ul style="color: #333; font-size: 0.85em;">
-                                <li>Zurich resident & community member</li>
-                                <li>Volunteer with Zurich high schools</li>
-                                <li>Teaching "How the Internet Works"</li>
-                                <li>Toastmasters & stand-up comedy</li>
+                        <div class="skill-card hidden-reveal" style="background: #FFD700; padding: 12px; border-radius: 8px;">
+                            <h4 style="color: #333; font-size: 0.85em; margin: 0 0 6px 0;">🎓 Swiss</h4>
+                            <ul style="color: #333; font-size: 0.65em; line-height: 1.4; margin: 0; padding-left: 15px;">
+                                <li>Zurich resident</li>
+                                <li>HS volunteer teacher</li>
+                                <li>"Internet Works" course</li>
+                                <li>Toastmasters & comedy</li>
                             </ul>
                         </div>
                     </div>
@@ -1142,7 +1149,16 @@
             backgroundTransition: 'zoom',
             controls: true,
             progress: true,
-            keyboard: true,
+            keyboard: {
+                82: () => { // 'r' key
+                    // Get current slide index
+                    const currentSlideIndex = Reveal.getIndices().h;
+                    // Force reload the current slide
+                    Reveal.slide(currentSlideIndex);
+                    // Reset animations
+                    resetAnimations();
+                }
+            },
             touch: true,
             loop: false,
             rtl: false,
